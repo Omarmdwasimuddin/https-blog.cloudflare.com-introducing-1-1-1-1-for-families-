@@ -1,67 +1,67 @@
-# Router-e Cloudflare 1.1.1.1 for Families Setup Guide
+# রাউটারে Cloudflare 1.1.1.1 for Families সেটআপ গাইড
 
-> **Goal:** Router-e DNS set kore pura home network-e **Malware + Adult Content** block kora.
-> **Shomoy lagbe:** prai 5-10 minute
+> **লক্ষ্য:** রাউটারে DNS সেট করে পুরো বাড়ির নেটওয়ার্কে **Malware + Adult Content** ব্লক করা।
+> **সময় লাগবে:** প্রায় ৫-১০ মিনিট
 
 ---
 
-## DNS Address (Malware + Adult Content Block)
+## DNS অ্যাড্রেস (Malware + Adult Content ব্লক)
 
-| Type | Primary DNS | Secondary DNS |
+| ধরন | Primary DNS | Secondary DNS |
 |------|-------------|---------------|
 | **IPv4** | `1.1.1.3` | `1.0.0.3` |
 | **IPv6** | `2606:4700:4700::1113` | `2606:4700:4700::1003` |
 
 ---
 
-## Quick Checklist
+## দ্রুত চেকলিস্ট
 
-- [ ] Router admin panel-e login korlam
-- [ ] DNS setting khuje pelam
-- [ ] Manual DNS boshalam (IPv4)
-- [ ] IPv6 DNS boshalam (jodi router support kore)
-- [ ] Save kore router reboot dilam
-- [ ] Device-e reconnect / DNS flush korlam
-- [ ] Test URL diye check korlam
-- [ ] Browser-er Secure DNS check korlam
+- [ ] রাউটারের অ্যাডমিন প্যানেলে লগইন করলাম
+- [ ] DNS সেটিং খুঁজে পেলাম
+- [ ] ম্যানুয়ালি DNS বসালাম (IPv4)
+- [ ] IPv6 DNS বসালাম (রাউটার সাপোর্ট করলে)
+- [ ] সেভ করে রাউটার রিবুট দিলাম
+- [ ] ডিভাইসে রিকানেক্ট / DNS ফ্লাশ করলাম
+- [ ] টেস্ট URL দিয়ে চেক করলাম
+- [ ] ব্রাউজারের Secure DNS চেক করলাম
 
 ---
 
-## Step-by-Step Process
+## ধাপে ধাপে প্রক্রিয়া
 
-### Step 1: Router Admin Panel-e Login Koro
+### ধাপ ১: রাউটারের অ্যাডমিন প্যানেলে লগইন করুন
 
-1. Browser open kore router-er IP address dao:
-   - `192.168.0.1` ba
+১. ব্রাউজার খুলে রাউটারের IP অ্যাড্রেস দিন:
+   - `192.168.0.1` অথবা
    - `192.168.1.1`
-   - (Router-er niche sticker-e IP lekha thake)
-2. Admin username ar password dao.
-   - Default username/password-o sticker-e thake.
-   - Tumi age change kore thakle seta use koro.
+   - (রাউটারের নিচের স্টিকারে IP লেখা থাকে)
+২. অ্যাডমিন ইউজারনেম ও পাসওয়ার্ড দিন।
+   - ডিফল্ট ইউজারনেম/পাসওয়ার্ডও স্টিকারে থাকে।
+   - আপনি আগে পরিবর্তন করে থাকলে সেটি ব্যবহার করুন।
 
 ---
 
-### Step 2: DNS Setting Khuje Ber Koro
+### ধাপ ২: DNS সেটিং খুঁজে বের করুন
 
-Router-er brand onujayi jaygata alada hoy. Common jaygagulo:
+রাউটারের ব্র্যান্ড অনুযায়ী জায়গাটা আলাদা হয়। সাধারণ জায়গাগুলো:
 
-- **WAN / Internet / Network** settings-er moddhe "DNS" option
-- Kono kono router-e **DHCP / LAN** settings-e DNS dewar option thake
+- **WAN / Internet / Network** সেটিংসের ভেতরে "DNS" অপশন
+- কিছু রাউটারে **DHCP / LAN** সেটিংসে DNS দেওয়ার অপশন থাকে
 
-> **Tip:** Menu-te "DNS", "Primary DNS", "Static DNS" ba "Manual DNS" word khujo.
+> **টিপ:** মেনুতে "DNS", "Primary DNS", "Static DNS" বা "Manual DNS" শব্দগুলো খুঁজুন।
 
 ---
 
-### Step 3: DNS Manually Boshao
+### ধাপ ৩: ম্যানুয়ালি DNS বসান
 
-DNS mode **Auto / ISP** theke **Manual / Static** e change koro, tarpor boshao:
+DNS মোড **Auto / ISP** থেকে **Manual / Static** এ পরিবর্তন করুন, তারপর বসান:
 
 ```
 Primary DNS   : 1.1.1.3
 Secondary DNS : 1.0.0.3
 ```
 
-Router IPv6 DNS-o chay hole:
+রাউটারে IPv6 DNS দেওয়ার অপশন থাকলে:
 
 ```
 Primary DNS   : 2606:4700:4700::1113
@@ -70,17 +70,17 @@ Secondary DNS : 2606:4700:4700::1003
 
 ---
 
-### Step 4: Save Kore Router Reboot Koro
+### ধাপ ৪: সেভ করে রাউটার রিবুট করুন
 
-1. **Save / Apply** button chapo.
-2. Router **restart / reboot** koro.
+১. **Save / Apply** বাটনে ক্লিক করুন।
+২. রাউটার **রিস্টার্ট / রিবুট** করুন।
 
 ---
 
-### Step 5: Device-e DNS Refresh Koro
+### ধাপ ৫: ডিভাইসে DNS রিফ্রেশ করুন
 
-- Connected device-gulo **Wi-Fi off kore abar on** koro (reconnect).
-- Laptop (Windows) hole Command Prompt-e ei command chalao:
+- কানেক্টেড ডিভাইসগুলোর **Wi-Fi বন্ধ করে আবার চালু** করুন (রিকানেক্ট)।
+- ল্যাপটপে (Windows) Command Prompt-এ এই কমান্ড চালান:
 
 ```
 ipconfig /flushdns
@@ -88,58 +88,58 @@ ipconfig /flushdns
 
 ---
 
-### Step 6: Test Koro
+### ধাপ ৬: টেস্ট করুন
 
-Ei duita link browser-e open koro:
+এই দুটি লিংক ব্রাউজারে খুলুন:
 
-| Test URL | Expected Result |
+| টেস্ট URL | প্রত্যাশিত ফলাফল |
 |----------|-----------------|
-| https://nudity.testcategory.com/ | **Block hobe** (adult content filter kaj korche) |
-| https://malware.testcategory.com/ | **Block hobe** (malware filter kaj korche) |
+| https://nudity.testcategory.com/ | **ব্লক হবে** (adult content ফিল্টার কাজ করছে) |
+| https://malware.testcategory.com/ | **ব্লক হবে** (malware ফিল্টার কাজ করছে) |
 
-Dutoi block hole setup **thik ache**.
+দুটোই ব্লক হলে সেটআপ **ঠিক আছে**।
 
 ---
 
-## Kichu Jinish Dekhe Rakho
+## কিছু বিষয় খেয়াল রাখুন
 
-### 1. ISP-er Locked Router
-Kono kono ISP-er router-e DNS change korar option thake na.
-- ISP-ke bolo unlock korte, **ba**
-- Nijer router kine ISP-er router-er pichone connect koro.
+### ১. ISP-র লক করা রাউটার
+কিছু ISP-র রাউটারে DNS পরিবর্তনের অপশন থাকে না।
+- ISP-কে আনলক করতে বলুন, **অথবা**
+- নিজের রাউটার কিনে ISP-র রাউটারের পেছনে সংযুক্ত করুন।
 
-### 2. Browser-er Secure DNS / DoH
-Chrome, Firefox-er Secure DNS on thakle oi browser router-er DNS bypass kore nijer DNS use korte pare.
-- Oi setting **off** koro, **ba**
-- Cloudflare family DoH URL set koro:
+### ২. ব্রাউজারের Secure DNS / DoH
+Chrome, Firefox-এর Secure DNS চালু থাকলে ওই ব্রাউজার রাউটারের DNS বাইপাস করে নিজের DNS ব্যবহার করতে পারে।
+- ওই সেটিং **বন্ধ** করুন, **অথবা**
+- Cloudflare family DoH URL সেট করুন:
 
 ```
 https://family.cloudflare-dns.com/dns-query
 ```
 
-### 3. IPv6
-ISP IPv6 dile ar router-e IPv6 DNS set na korle kichu traffic filter bypass korte pare. Tai IPv6 DNS-o set kora bhalo.
+### ৩. IPv6
+ISP IPv6 দিলে এবং রাউটারে IPv6 DNS সেট না করলে কিছু ট্রাফিক ফিল্টার এড়িয়ে যেতে পারে। তাই IPv6 DNS-ও সেট করা ভালো।
 
-### 4. Mobile Data / Onno Network
-Ei filter **shudhu ei router-er Wi-Fi-te** kaj korbe. Mobile data ba onno network-e kaj korbe na.
+### ৪. মোবাইল ডেটা / অন্য নেটওয়ার্ক
+এই ফিল্টার **শুধু এই রাউটারের Wi-Fi-তে** কাজ করবে। মোবাইল ডেটা বা অন্য নেটওয়ার্কে কাজ করবে না।
 
-### 5. Foolproof Na
-DNS filter 100% foolproof na. Tech-savvy keu DNS change kore bypass korte pare. Eta ekta **extra protection layer** hishebe dhoro.
-
----
-
-## Problem Hole Ki Korbe (Troubleshooting)
-
-| Problem | Solution |
-|---------|----------|
-| Site block hocche na | Device reconnect koro, `ipconfig /flushdns` chalao, browser-er Secure DNS check koro |
-| Router-e DNS option nei | ISP-er locked router hote pare, ISP-ke jogajog koro |
-| Internet cholche na | DNS address thik type korechho kina check koro, na hole Auto DNS-e fire jao |
-| Kono valid site vul kore block | https://radar.cloudflare.com/categorization-feedback/ e anonymous feedback dao |
+### ৫. শতভাগ নিশ্চিত নয়
+DNS ফিল্টার ১০০% নিরাপদ নয়। প্রযুক্তি জানা কেউ DNS বদলে এটি বাইপাস করতে পারে। একে একটি **অতিরিক্ত সুরক্ষা স্তর** হিসেবে ধরুন।
 
 ---
 
-## Reference
+## সমস্যা হলে কী করবেন (Troubleshooting)
+
+| সমস্যা | সমাধান |
+|----------|----------|
+| সাইট ব্লক হচ্ছে না | ডিভাইস রিকানেক্ট করুন, `ipconfig /flushdns` চালান, ব্রাউজারের Secure DNS চেক করুন |
+| রাউটারে DNS অপশন নেই | ISP-র লক করা রাউটার হতে পারে, ISP-র সাথে যোগাযোগ করুন |
+| ইন্টারনেট চলছে না | DNS অ্যাড্রেস ঠিকভাবে লিখেছেন কিনা দেখুন, নাহলে Auto DNS-এ ফিরে যান |
+| কোনো বৈধ সাইট ভুলে ব্লক হয়েছে | https://radar.cloudflare.com/categorization-feedback/ এ বেনামে ফিডব্যাক দিন |
+
+---
+
+## রেফারেন্স
 
 - Cloudflare Blog: https://blog.cloudflare.com/introducing-1-1-1-1-for-families/
 - Cloudflare Setup Docs: https://developers.cloudflare.com/1.1.1.1/setup/
